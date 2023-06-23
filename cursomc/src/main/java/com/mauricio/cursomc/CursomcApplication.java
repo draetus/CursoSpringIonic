@@ -28,7 +28,6 @@ import com.mauricio.cursomc.repositories.ClienteRepository;
 import com.mauricio.cursomc.repositories.EnderecoRepository;
 import com.mauricio.cursomc.repositories.EstadoRepository;
 import com.mauricio.cursomc.repositories.ItemPedidoRepository;
-import com.mauricio.cursomc.repositories.PagamentoRepository;
 import com.mauricio.cursomc.repositories.PedidoRepository;
 import com.mauricio.cursomc.repositories.ProdutoRepository;
 
@@ -55,9 +54,6 @@ public class CursomcApplication implements CommandLineRunner{
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
-	
-	@Autowired
-	private PagamentoRepository pagamentoRepository;
 	
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
@@ -123,7 +119,6 @@ public class CursomcApplication implements CommandLineRunner{
 		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
 		
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
-//		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
 		
 		ItemPedido ip1 = new ItemPedido(ped1, p1, 0d, 1, 2000d);
 		ItemPedido ip2 = new ItemPedido(ped1, p3, 0d, 2, 80d);
