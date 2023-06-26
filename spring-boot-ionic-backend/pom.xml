@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mauricio</groupId>
-	<artifactId>cursomc</artifactId>
+	<artifactId>spring-boot-ionic-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cursomc</name>
-	<description>Projeto de curso de Spring</description>
+	<description>Módulo Backend para Curso de Spring e Ionic</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
