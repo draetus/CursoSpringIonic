@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+
 import com.mauricio.cursomc.domain.Categoria;
 
 public class CategoriaDTO implements Serializable {
@@ -22,6 +24,10 @@ public class CategoriaDTO implements Serializable {
 	
 	public static List<CategoriaDTO> generateList(List<Categoria> categorias) {
 		return categorias.stream().map(CategoriaDTO::new).collect(Collectors.toList());
+	}
+	
+	public static Page<CategoriaDTO> generatePage(Page<Categoria> categorias) {
+		return categorias.map(CategoriaDTO::new);
 	}
 
 	public Integer getId() {
