@@ -1,6 +1,9 @@
 package com.mauricio.cursomc.security;
 
+import static java.time.ZoneOffset.UTC;
+
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -9,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -51,5 +55,23 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter{
 		}
 		return null;
 	}
+	
+	@Override
+	protected void onUnsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
+			AuthenticationException failed) throws IOException {
+		response.setStatus(401);
+		response.setContentType("application/json");
+		response.getWriter().append(json());
+	}
+	
+	private String json() {
+		long date = LocalDateTime.now().toInstant(UTC).toEpochMilli();
+		return "{\"timestamp\": " + date + ", "
+				+ "\"status\": 401, "
+				+ "\"message\": \"Email ou senha inválidos\", "
+				+ "\"path\": \"/login\" }";
+		
+	}
+
 
 }

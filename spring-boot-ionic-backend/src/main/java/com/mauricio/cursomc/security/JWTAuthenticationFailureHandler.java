@@ -1,4 +1,4 @@
-package com.mauricio.cursomc;
+package com.mauricio.cursomc.security;
 
 import static java.time.ZoneOffset.UTC;
 
