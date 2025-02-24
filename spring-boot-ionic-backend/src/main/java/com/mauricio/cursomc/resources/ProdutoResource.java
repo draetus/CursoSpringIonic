@@ -1,5 +1,6 @@
 package com.mauricio.cursomc.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class ProdutoResource {
 			@RequestParam(value="orderBy", defaultValue="nome") String orderBy, 
 			@RequestParam(value="direction", defaultValue="ASC") String direction) {
 		String nomeDecoded = URL.decodeParam(nome);
-		List<Integer> ids = URL.decodeIntList(categorias);
+		List<Integer> ids = categorias.isEmpty() ? new ArrayList<Integer>() : URL.decodeIntList(categorias);
 		Page<Produto> produtos = produtoService.search(nomeDecoded, ids, page, size, orderBy, direction);
 		Page<ProdutoDTO> dtos = ProdutoDTO.generatePage(produtos);
 		return ResponseEntity.ok().body(dtos);

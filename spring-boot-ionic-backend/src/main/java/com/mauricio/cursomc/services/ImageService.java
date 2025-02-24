@@ -11,10 +11,12 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FilenameUtils;
 import org.imgscalr.Scalr;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mauricio.cursomc.services.exceptions.FileException;
 
+@Service
 public class ImageService {
 	
 	public BufferedImage getJpgImageFromFile(MultipartFile uploadedFile) {
