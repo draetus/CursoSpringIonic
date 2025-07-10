@@ -4,7 +4,6 @@ import { StorageService } from '../../services/storage_service';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { API_CONFIG } from '../../config/api.config';
-import { m } from '@angular/core/src/render3';
 
 @IonicPage()
 @Component({
