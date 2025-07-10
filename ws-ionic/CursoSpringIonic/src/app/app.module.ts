@@ -11,6 +11,7 @@ import { CategoriaService } from '../services/domain/categoria.service';
 import { ErrorInterceptionProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage_service';
+import { ClienteService } from '../services/domain/cliente.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StorageService } from '../services/storage_service';
     CategoriaService, // Service da pagina de categorias
     AuthService, // Service de autenticação
     ErrorInterceptionProvider, // Interceptador definido no projeto para tratar os erros de requisições http
-    StorageService // Service de guardar dados localmente
+    StorageService, // Service de guardar dados localmente
+    ClienteService // Service de resgatar clientes
   ]
 })
 export class AppModule {}
