@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CategoriaService } from '../services/domain/categoria.service';
 import { ErrorInterceptionProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage_service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthService } from '../services/auth.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CategoriaService, // Service da pagina de categorias
     AuthService, // Service de autenticação
-    ErrorInterceptionProvider // Interceptador definido no projeto para tratar os erros de requisições http
+    ErrorInterceptionProvider, // Interceptador definido no projeto para tratar os erros de requisições http
+    StorageService // Service de guardar dados localmente
   ]
 })
 export class AppModule {}
