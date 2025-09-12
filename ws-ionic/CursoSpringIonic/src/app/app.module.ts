@@ -31,8 +31,8 @@ import { AuthInterceptionProvider, AuthInterceptor } from '../interceptors/auth-
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CategoriaService, // Service da pagina de categorias
-    AuthService, // Service de autenticação
+    CategoriaService, // Service da pagina de categorias declarado globalmente para uso em todas paginas
+    AuthService, // Service de autenticação declarado globalmente para uso em todas paginas
     AuthInterceptionProvider, // Interceptador definido no projeto para tratar a autenticação, A ORDEM DECLARADA AQUI É A ORDEM DE EXECUÇÃO DOS INTERCEPTADORES
     ErrorInterceptionProvider, // Interceptador definido no projeto para tratar os erros de requisições http
     StorageService, // Service de guardar dados localmente
