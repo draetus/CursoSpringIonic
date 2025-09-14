@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProdutoDTO } from '../../models/produto.dto';
 import { CategoriaService } from '../../services/domain/categoria.service';
 import { ProdutoService } from '../../services/domain/produto.service';
+import { API_CONFIG } from '../../config/api.config';
 
 
 @IonicPage()
@@ -25,20 +26,20 @@ export class ProdutosPage {
     this.produtoService.findByCategoria(categoria_id)
       .subscribe(response => {
         this.items = response['content'];
-      });
-
-    this.items = [
-      {
-        id : "1",
-        nome: "Mouse",
-        preco: 89.99
+        this.loadImageUrls();
       },
-      {
-        id : "2",
-        nome: "Teclado",
-        preco: 100.00
-      }
-    ]
+    error => {});
   };
+
+  loadImageUrls() {
+    for (var i=0; i<this.items.length; i++) {
+      let item = this.items[i];
+      this.produtoService.getSmallImageFromBucket(item.id)
+        .subscribe(response => {
+          item.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.id}-small.jpg`
+        },
+      error => {})
+    }
+  }
 
 }
