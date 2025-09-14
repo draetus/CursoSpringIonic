@@ -13,6 +13,7 @@ import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage_service';
 import { ClienteService } from '../services/domain/cliente.service';
 import { AuthInterceptionProvider, AuthInterceptor } from '../interceptors/auth-interceptor';
+import { ProdutoService } from '../services/domain/produto.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AuthInterceptionProvider, AuthInterceptor } from '../interceptors/auth-
     AuthInterceptionProvider, // Interceptador definido no projeto para tratar a autenticação, A ORDEM DECLARADA AQUI É A ORDEM DE EXECUÇÃO DOS INTERCEPTADORES
     ErrorInterceptionProvider, // Interceptador definido no projeto para tratar os erros de requisições http
     StorageService, // Service de guardar dados localmente
-    ClienteService // Service de resgatar clientes
+    ClienteService, // Service de resgatar clientes
+    ProdutoService // Service de resgatar produtos
   ]
 })
 export class AppModule {}
