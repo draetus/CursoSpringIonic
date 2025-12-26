@@ -12,8 +12,9 @@ import { ErrorInterceptionProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage_service';
 import { ClienteService } from '../services/domain/cliente.service';
-import { AuthInterceptionProvider, AuthInterceptor } from '../interceptors/auth-interceptor';
+import { AuthInterceptionProvider } from '../interceptors/auth-interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
+import { CartService } from '../services/domain/cart.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProdutoService } from '../services/domain/produto.service';
     ErrorInterceptionProvider, // Interceptador definido no projeto para tratar os erros de requisições http
     StorageService, // Service de guardar dados localmente
     ClienteService, // Service de resgatar clientes
-    ProdutoService // Service de resgatar produtos
+    ProdutoService, // Service de resgatar produtos
+    CartService // Service para carrinho de compras
   ]
 })
 export class AppModule {}
