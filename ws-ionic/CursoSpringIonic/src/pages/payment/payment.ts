@@ -29,7 +29,6 @@ export class PaymentPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PaymentPage');
   }
 
   nextPage() {

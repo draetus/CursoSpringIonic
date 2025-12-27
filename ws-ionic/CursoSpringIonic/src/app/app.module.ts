@@ -41,8 +41,7 @@ import { PedidoService } from '../services/domain/pedido.service';
     StorageService, // Service de guardar dados localmente
     ClienteService, // Service de resgatar clientes
     ProdutoService, // Service de resgatar produtos
-    CartService, // Service para carrinho de compras
-    PedidoService // Service para pedidos
+    CartService // Service para carrinho de compras
   ]
 })
 export class AppModule {}
