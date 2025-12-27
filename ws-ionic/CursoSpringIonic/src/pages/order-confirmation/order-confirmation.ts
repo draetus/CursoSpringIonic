@@ -6,7 +6,6 @@ import { CartService } from '../../services/domain/cart.service';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { EnderecoDTO } from '../../models/endereco.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
-import { RefDTO } from '../../models/ref.dto';
 import { PedidoService } from '../../services/domain/pedido.service';
 
 @IonicPage()
