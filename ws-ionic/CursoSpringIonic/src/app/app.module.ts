@@ -15,6 +15,7 @@ import { ClienteService } from '../services/domain/cliente.service';
 import { AuthInterceptionProvider } from '../interceptors/auth-interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
 import { CartService } from '../services/domain/cart.service';
+import { PedidoService } from '../services/domain/pedido.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CartService } from '../services/domain/cart.service';
     StorageService, // Service de guardar dados localmente
     ClienteService, // Service de resgatar clientes
     ProdutoService, // Service de resgatar produtos
-    CartService // Service para carrinho de compras
+    CartService, // Service para carrinho de compras
+    PedidoService // Service para pedidos
   ]
 })
 export class AppModule {}
